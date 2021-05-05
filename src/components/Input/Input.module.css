@@ -1,0 +1,37 @@
+.Input input {
+  width: 12.65vw;
+  height: 2.91vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 0.104vw solid #e4eaf2;
+  border-radius: 0.78vw;
+  opacity: 1;
+  color: #313131;
+  margin-top: 1vw;
+  box-sizing: border-box;
+  padding: 0.625vw 1.04vw;
+  margin: 0.416vw 0;
+}
+
+.Input select {
+  width: 12.65vw;
+  height:  2.91vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 0.104vw solid #e4eaf2;
+  border-radius: 0.78vw;
+  opacity: 1;
+  color: #313131;
+  margin-top: 1vw;
+  box-sizing: border-box;
+  padding: 0.625vw 1.04vw;
+  margin: 0.416vw 0;
+}
+.Input label {
+  text-align: left;
+  font-size: 0.83vw;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #313131;
+  opacity: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+}

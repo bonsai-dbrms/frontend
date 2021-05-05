@@ -1,0 +1,113 @@
+.Card {
+  width: 63.37vw;
+  height: auto;
+  /* min-height: 18.697vw; */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  display: grid;
+  grid-template-columns:  30% 65.54%;
+  padding-top: 1.56vw;
+  margin-bottom: 1.56vw;
+  margin-top: 1.56vw;
+  gap: 0vw;
+}
+
+.VariableContainer {
+  padding: 1.5vw;
+  margin-left: 2vw;
+  margin-top: -.4vw;
+}
+.ValueContainer {
+  width: 42.3vw;
+  height: auto;
+  /* min-height: 14.58vw; */
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.InputContainer {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-auto-rows: auto;
+  gap: 0.5vw;
+  padding: 1vw;
+}
+.InputContainerResult {
+  display: grid;
+  grid-template-columns: 40% 40%  ;
+  grid-auto-rows: auto;
+  /* grid-gap: 2vw; */
+  gap: 1.5vw;
+  padding: 1vw;
+}
+.operatorCard {
+  position: absolute;
+  /* z-index: 0; */
+  top: -9vw;
+  height: 16.43vw;
+  right: -37.8vw;
+  /* width: 3.56vw; */
+}
+.operatorCard img {
+  transform: rotate(-90deg);
+  margin: 0;
+  padding: 0;
+  height: 2vw;
+}
+
+.operatorPLus {
+  position: absolute;
+  right: -33vw;
+  top: -10.5vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+.operatorMinus {
+  position: absolute;
+  right: -33vw;
+  top: -8.5vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+.operatorMinus {
+  transform: rotate(-90deg);
+}
+
+.InnerOperator {
+  display: grid;
+  grid-template-columns: 5% 5%;
+  gap: 0.5vw;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 2.5vw;
+}
+.operatorplus {
+  position: absolute;
+  right: -32vw;
+  top: -0.5vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+.operatorminus {
+  font-size: 2vw;
+  cursor: pointer;
+  position: absolute;
+  right: -34vw;
+  top: -0.5vw;
+}
+.BulgeDown{
+  position: absolute;
+  /* z-index: 0; */
+  top: -0.2vw;
+  height: 16.43vw;
+  right: -37.8vw;
+  cursor: pointer;
+}
+.BulgeDown img{
+  width: auto;
+  height: 2vw;
+}

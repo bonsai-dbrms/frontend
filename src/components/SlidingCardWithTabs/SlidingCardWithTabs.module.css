@@ -1,0 +1,77 @@
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.Container {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1vw 2.6vw #0000000d;
+  opacity: 1;
+  border-radius: 1.56vw;
+  position: fixed;
+  width: 18.76vw;
+  height: 42.125vw;
+  z-index: 2;
+  top: 0.5vw;
+  right: 2vw;
+  padding: 2vw 2.34vw;
+}
+
+.Buldge {
+  position: absolute;
+  left: -5vw;
+}
+
+.Buldge img {
+  height: 7.8vw;
+}
+
+.CloseIcon {
+  position: absolute;
+  left: -3.9vw;
+  top: 3.45vw;
+  height: 0.9333vw;
+  cursor: pointer;
+}
+.Heading {
+  text-align: center;
+  margin-bottom: 5vw;
+}
+.InnerCard {
+  width: 14.77vw;
+  height: auto;
+  min-height: 10.52vw;
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0vw;
+  color: black;
+  padding:  2vw;
+}
+.InnerCardResult {
+  width: 14.77vw;
+  height: auto;
+  min-height: 10.52vw;
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 0vw;
+  color: black;
+  padding:  2vw;
+}
+.operatorHead{
+  text-align: center;
+  font-weight: bold;
+}
+.operator{
+  text-align: center;
+}

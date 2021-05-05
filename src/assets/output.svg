@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216.549" height="103.118" viewBox="0 0 216.549 103.118">
+  <g id="Group_27905" data-name="Group 27905" transform="translate(-387.774 -861.5)">
+    <g id="Elements_02_Flowchart_Blocks_Database" data-name="Elements/#02 Flowchart Blocks/Database" transform="translate(387.774 861.5)">
+      <path id="Bg" d="M0,85.932V17.187C0,7.695,48.476,0,108.274,0S216.549,7.695,216.549,17.187V85.932c0,9.492-48.476,17.187-108.274,17.187S0,95.424,0,85.932Z" fill="#f2f7f9"/>
+      <ellipse id="Bg-2" data-name="Bg" cx="108.274" cy="17.186" rx="108.274" ry="17.186" transform="translate(0 0)" fill="#ddeaf3"/>
+    </g>
+    <text id="Output" transform="translate(465.774 934.059)" fill="#313131" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">OUTPUT</tspan></text>
+  </g>
+</svg>

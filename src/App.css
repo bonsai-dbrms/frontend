@@ -1,0 +1,34 @@
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+}
+
+.btn-blue {
+  width: 9.84vw;
+  height: 4.37vw;
+  background: #0c0c18 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  text-align: center;
+  font-size: 0.83vw;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  text-transform: uppercase;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ButtonContainer {
+  justify-content: center;
+  display: flex;
+}
+.hover :hover {
+  cursor: pointer;
+}
+.btn-blue :hover {
+  cursor: pointer;
+}
