@@ -54,13 +54,13 @@ export default function FlowChart() {
 
     }
     const resultHandle = () => {
-        setType(true)
+        // setType(true)
         let array = state.form.result && state.form.result
         setShow(true)
         
         array && setData(array)
     }
-    console.log(boxes, lines)
+    // console.log(boxes, lines)
     return (
         <div className={classes.FlowChart}>
             <Navbar />

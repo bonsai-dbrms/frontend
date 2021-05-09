@@ -18,3 +18,22 @@ export const formReducer = (state, action) => {
       return state;
   }
 };
+
+export const nameReducer = (state, action) => {
+  switch (action.type) {
+    case SET_FORM:
+      return {
+        ...state,
+        name: action.payload,
+       
+      };
+    case REMOVE_FORM:
+      return {
+        ...state,
+        name: {},
+     
+      };
+    default:
+      return state;
+  }
+};

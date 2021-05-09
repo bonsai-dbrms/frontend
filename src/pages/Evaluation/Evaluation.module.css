@@ -1,0 +1,35 @@
+.Evaluation {
+  padding: 1.58vw;
+  background: #eeeeee 0% 0% no-repeat padding-box;
+  width: fit-content;
+}
+.Container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95.82vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  height: 72vh;
+  flex-direction: column;
+  margin-top: 2vw;
+  border-radius: 1.56vw;
+  padding-top: 4vw;
+}
+.Heading{
+  font-size: 3vw;
+  font-weight: 900;
+  text-align: center;
+  color: #0c0c18;
+  margin-bottom: 4vw;
+}
+
+.Table{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1vw;
+  border-radius: 1.5vw;
+  padding-bottom: 4vw;
+}
+.Submit{
+  margin-top: 2vw;
+  cursor: pointer;
+}

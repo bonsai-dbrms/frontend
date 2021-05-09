@@ -34,7 +34,7 @@ export default function CardComponent({
       setContainer(array);
     }
   };
-  console.log(formData);
+  // console.log(formData);
 
   return (
     <>

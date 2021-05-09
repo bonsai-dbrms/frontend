@@ -22,16 +22,16 @@ export default function ResultCard({
 
     const handleRemoveContainerInput = () => {
         if (length >= 0) {
-              let keyArray = [,`resultValue0${container[container.length - 1]}`,`resultType0${container[container.length - 1]}`];
-              let object = { ...formData };
-              let result = _.omit(object, keyArray);
-              setFormData(result);
-              const array = Array.from({ length: length - 1 }, (_, i) => i + 1);
-              setLength(length - 1);
-              setContainer(array);
+            let keyArray = [, `resultValue0${container[container.length - 1]}`, `resultType0${container[container.length - 1]}`, `resultOperator0${container[container.length - 1]}`];
+            let object = { ...formData };
+            let result = _.omit(object, keyArray);
+            setFormData(result);
+            const array = Array.from({ length: length - 1 }, (_, i) => i + 1);
+            setLength(length - 1);
+            setContainer(array);
         }
     };
-    console.log(formData);
+    // console.log(formData);
 
     return (
         <>
@@ -49,7 +49,15 @@ export default function ResultCard({
 
                 <div className={classes.ValueContainer}>
                     <div className={classes.InputContainerResult}>
+                        <div>
 
+                            <DropDown
+                                label={"Operator"}
+                                onChange={onChange}
+                                name={`resultOperator00`}
+                               
+                            />
+                        </div>
                         <div>
 
                             <DropDownType
@@ -68,7 +76,7 @@ export default function ResultCard({
 
                             />
                         </div>
-                       
+
 
                         {container.map((item, i) => (
                             <>

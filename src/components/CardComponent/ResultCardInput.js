@@ -1,10 +1,18 @@
 import React from "react";
 import { Input, DropDown, DropDownType } from "../../components/Input/Input";
 import { TYPE_OPTIONS } from "../../constants"
-export default function ResultCardInput({ onChange, data ,formData}) {
+export default function ResultCardInput({ onChange, data, formData }) {
   return (
     <>
-      
+      <div>
+
+        <DropDown
+          label={"Operator"}
+          onChange={onChange}
+          name={`resultOperator${data}`}
+
+        />
+      </div>
       <div>
         {" "}
         <DropDownType

@@ -1,0 +1,30 @@
+.ButtonSpace{
+    padding: 1.58vw;
+    background: #eeeeee 0% 0% no-repeat padding-box;
+    width: fit-content;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96.82vw;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    height: 80vh;
+    flex-direction: column;
+    margin-top: 2vw;
+    border-radius: 1.56vw;
+}
+.Heading{
+    font-size: 3vw;
+    font-weight: 900;
+    text-align: center;
+    color: #0c0c18;
+    margin-bottom: 4vw;
+}
+.ButtonContainer{
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 30% 30% 30%;
+    gap: 2vw;
+}

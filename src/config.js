@@ -1,0 +1,1 @@
+export const CONFIG ="https://bonsai-dbrms.herokuapp.com";

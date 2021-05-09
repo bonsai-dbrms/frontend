@@ -38,10 +38,9 @@
 }
 .InputContainerResult {
   display: grid;
-  grid-template-columns: 40% 40%  ;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   grid-auto-rows: auto;
-  /* grid-gap: 2vw; */
-  gap: 1.5vw;
+  gap: 0.5vw;
   padding: 1vw;
 }
 .operatorCard {

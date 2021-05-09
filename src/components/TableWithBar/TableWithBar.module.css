@@ -1,0 +1,139 @@
+.Totalcount {
+  background: #f8faff 0% 0% no-repeat padding-box;
+  border-radius: 0.78vw;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 0.729vw;
+  width: 8.64vw;
+  height: 2.9vw;
+}
+
+.SearchContainer input {
+  height: 2.9vw;
+  width: 18vw;
+  outline: none;
+  padding-left: 1.3vw;
+  font-size: 0.729vw;
+  border: none;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 0.05vw solid #eeeeee;
+  border-radius: 0.78vw;
+}
+
+.Bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TableComponent table {
+  width: 50vw;
+  border-collapse: collapse;
+  margin-top: 2vw;
+}
+
+.TableComponent th {
+  letter-spacing: 0.8px;
+  color: #313131;
+  text-transform: uppercase;
+  font-size: 0.8333vw;
+}
+
+.TableComponent th,
+.TableComponent td {
+  padding: 1.3vw 0;
+  border-bottom: 0.05vw solid #eeeeee;
+}
+
+.TableComponent td {
+  color: #313131;
+  text-transform: capitalize;
+  opacity: 0.7;
+  font-size: 1.04vw;
+  text-align: center;
+}
+
+.Download {
+  height: 3vw;
+  width: 3vw;
+  background: #0e2d61;
+  border-radius: 0.78vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.Download img {
+  height: 1.2vw;
+  width: 1.2vw;
+}
+
+.RightContainer {
+  display: flex;
+  grid-column-gap: 1vw;
+}
+
+.ModalContainer {
+  height: 12.14vw;
+  width: 24.548vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1vw 2.1vw #0000000d;
+  border-radius: 1.56vw;
+  padding: 3.38vw 5.26vw;
+  position: relative;
+}
+
+.Title {
+  font-size: 0.8333vw;
+  letter-spacing: 0.8px;
+  color: #313131;
+  text-transform: uppercase;
+  margin-bottom: 1.3vw;
+}
+
+.InputContainer input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #eeeeee;
+  border-radius: 0.78vw;
+  width: 19.3vw;
+  height: 2.9vw;
+  outline: none;
+  font-size: 1.3vw;
+  margin-top: 1vw;
+  width: 100%;
+}
+
+.SubmitButton {
+  background: #0e2d61 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  width: 100%;
+  height: 2.8vw;
+  font-size: 1vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.3vw;
+  cursor: pointer;
+}
+
+.Buldge {
+  position: absolute;
+  right: 1vw;
+  top: -2vw;
+}
+
+.Buldge img {
+  height: 3vw;
+}
+
+.CloseIcon {
+  position: absolute;
+  right: 3.7vw;
+  top: -1.3vw;
+  height: 1vw;
+  width: 1.2vw;
+}

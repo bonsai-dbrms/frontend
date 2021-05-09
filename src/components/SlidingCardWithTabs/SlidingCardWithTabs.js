@@ -12,7 +12,7 @@ const SlidingCardWith = ({ isOpen = true, setOpen, data, type }) => {
   const AnimatedCard = styled.div`
     animation: 0.7s ${slideIn};
   `;
-  console.log(data)
+  
   return (
     isOpen && (
       <div>

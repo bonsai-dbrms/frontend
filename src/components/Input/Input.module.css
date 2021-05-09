@@ -14,7 +14,7 @@
 
 .Input select {
   width: 12.65vw;
-  height:  2.91vw;
+  height: 2.91vw;
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 0.104vw solid #e4eaf2;
   border-radius: 0.78vw;
@@ -26,6 +26,72 @@
   margin: 0.416vw 0;
 }
 .Input label {
+  text-align: left;
+  font-size: 0.83vw;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #313131;
+  opacity: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.InputMax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.InputMax select {
+  width: 48.41vw;
+  height: 5.91vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 0.104vw solid #e4eaf2;
+  border-radius: 0.78vw;
+  opacity: 1;
+  color: #313131;
+  margin-top: 1vw;
+  box-sizing: border-box;
+  padding: 2vw 4.04vw;
+  margin: 2.16vw 0;
+  font-size: 1.63vw;
+  /* margin-top: 0vw; */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='50' viewBox='0 0 24 24' width='50' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 1.56vw;
+
+  margin-right: 2rem;
+}
+
+.InputMaxAuto input {
+  width: 56.37vw;
+  height: 2.91vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 0.104vw solid #e4eaf2;
+  border-radius: 0.78vw;
+  opacity: 1;
+  color: #313131;
+  margin-top: 1vw;
+  box-sizing: border-box;
+  padding: 0.625vw 1.04vw;
+  margin: 0.416vw 0;
+  /* margin-top: 0vw; */
+  
+  /* margin-right: 2rem; */
+}
+.InputMax label {
+  text-align: center;
+  font-size: 1.83vw;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #313131;
+  opacity: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.InputMaxAuto label{
   text-align: left;
   font-size: 0.83vw;
   font-weight: normal;

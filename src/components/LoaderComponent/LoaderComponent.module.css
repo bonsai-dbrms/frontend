@@ -1,0 +1,11 @@
+.LoaderParent {
+  position: fixed;
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}

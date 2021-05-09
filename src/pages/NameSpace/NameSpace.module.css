@@ -1,0 +1,42 @@
+.NameSpace {
+  padding: 1.58vw;
+  background: #eeeeee 0% 0% no-repeat padding-box;
+  width: fit-content;
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96.82vw;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  height: 80vh;
+  flex-direction: column;
+  margin-top: 2vw;
+  border-radius: 1.56vw;
+}
+.Heading {
+  font-size: 3vw;
+  font-weight: 900;
+  text-align: center;
+  color: #0c0c18;
+}
+
+.Button {
+  width: 20.41vw;
+  height: 4.37vw;
+  background: #0c0c18 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  text-align: center;
+  font-size: 2.83;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  text-transform: uppercase;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

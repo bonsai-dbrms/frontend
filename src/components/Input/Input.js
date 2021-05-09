@@ -44,7 +44,30 @@ export const DropDownType = ({ data, label,name,onChange,options }) => {
     )
 }
 
-// > : gt
-// < : lt
-// = : eq
-// contains : ct
+
+export const DropDownMax = ({  label,name,onChange,options }) => {
+    return (
+        <>
+
+            <div className={classes.InputMax}>
+                <label htmlFor="cars">{label}</label>
+                <select id="cars" name={`${name}`} onChange={onChange}>
+                {options.map((item)=>(
+                     <option value={`${item.id}`}>{`${item.name}`}</option>
+                ))}
+                    
+                </select>
+            </div>
+        </>
+    )
+}
+
+export const InputMax = ({ label,name,data,onChange }) => {
+    return (
+        <div className={classes.InputMaxAuto}>
+            <label htmlFor="text">{label}</label>
+            <input type="text" id="text"  name={`${name}`} onChange={onChange} />
+        </div>
+    )
+}
+
