@@ -1,8 +1,8 @@
 export const TYPE_OPTIONS = {
-    "gt": [{ id: "integer", name: "Integer" },{ id: "", name: "None" }],
-    "lt": [{ id: "integer", name: "Integer" },{ id: "", name: "None" }],
-    "eq": [{ id: "integer", name: "Integer" }, { id: "string", name: "String" },{ id: "", name: "None" }],
-    "ct": [{ id: "string", name: "String" },{ id: "", name: "None" }],
+    "gt": [{ id: "", name: "None" },{ id: "integer", name: "Integer" }],
+    "lt": [{ id: "", name: "None" },{ id: "integer", name: "Integer" }],
+    "eq": [{ id: "", name: "None" },{ id: "integer", name: "Integer" }, { id: "string", name: "String" }],
+    "ct": [{ id: "", name: "None" },{ id: "string", name: "String" }],
     "default":[]
 }
 
@@ -10,7 +10,7 @@ export const TYPE_OPTIONS = {
 export const TYPE_ENUMS={
     "gt": ">",
     "lt": "<",
-    "eq": "==",
+    "eq": "=",
     "ct": "Contains",
 }
 
@@ -20,7 +20,7 @@ export const REMOVE_FORM = "REMOVE_FORM";
 
 
 export const Operator_OPTIONS = {
-    "string": [{ id: "eq", name: "==" },{ id: "ct", name: "Contains" }],
-    "integer": [{ id: "gt", name: ">" },{ id: "lt", name: "<" },{ id: "eq", name: "==" }],
+    "string": [{ id: "", name: "None" },{ id: "eq", name: "=" },{ id: "ct", name: "Contains" }],
+    "integer": [{ id: "", name: "None" },{ id: "gt", name: ">" },{ id: "lt", name: "<" },{ id: "eq", name: "=" }],
     
 }

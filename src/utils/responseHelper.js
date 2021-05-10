@@ -31,7 +31,7 @@ export const responseHelper = (data, FormDataResult) => {
             resobj.result.push(
                 {
                     attribute_name: FormDataResult[`resultVariable00`],
-                    value: FormDataResult[`resultValue${matches[0]}`],
+                    value: FormDataResult[`resultType${matches[0]}`]==="integer"? Number(FormDataResult[`resultValue${matches[0]}`]):FormDataResult[`resultValue${matches[0]}`],
                     operator: FormDataResult[`resultOperator${matches[0]}`],
                     type: FormDataResult[`resultType${matches[0]}`],
 
@@ -44,7 +44,7 @@ export const responseHelper = (data, FormDataResult) => {
                 resobj.result.push(
                     {
                         attribute_name: FormDataResult[`resultVariable00`],
-                        value: FormDataResult[`resultValue${matches[0]}`],
+                        value: FormDataResult[`resultType${matches[0]}`]==="integer"? Number(FormDataResult[`resultValue${matches[0]}`]):FormDataResult[`resultValue${matches[0]}`],
                         operator: FormDataResult[`resultOperator${matches[0]}`],
                         type: FormDataResult[`resultType${matches[0]}`],
                     }
@@ -69,7 +69,7 @@ export const responseHelper = (data, FormDataResult) => {
                     {
                         attribute_name: data[`variable${matches[0]}`],
                         operator: data[`operator${matches[0]}`],
-                        value: data[`value${matches[0]}`],
+                        value: data[`type${matches[0]}`]==="integer"? Number(data[`value${matches[0]}`]):data[`value${matches[0]}`],
                         type: data[`type${matches[0]}`],
                         position: matches[0]
                     }
@@ -82,7 +82,7 @@ export const responseHelper = (data, FormDataResult) => {
                         {
                             attribute_name: data[`variable${matches[0]}`],
                             operator: data[`operator${matches[0]}`],
-                            value: data[`value${matches[0]}`],
+                            value: data[`type${matches[0]}`]==="integer"? Number(data[`value${matches[0]}`]):data[`value${matches[0]}`],
                             type: data[`type${matches[0]}`],
                             position: matches[0]
                         }

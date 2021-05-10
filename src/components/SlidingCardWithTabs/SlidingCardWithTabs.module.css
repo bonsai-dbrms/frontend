@@ -63,15 +63,17 @@
   border-radius: 1.56vw;
   opacity: 1;
   display: grid;
-  grid-template-columns: 100%;
-  gap: 0vw;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  gap: 0.1vw;
   color: black;
   padding:  2vw;
 }
 .operatorHead{
   text-align: center;
   font-weight: bold;
+  font-size: .9vw;
 }
 .operator{
   text-align: center;
+  font-size: .9vw;
 }

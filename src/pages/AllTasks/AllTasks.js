@@ -46,9 +46,9 @@ export default function AllTasks(props) {
             <NavBar />
             <div className={classes.Container}>
                 <div className={classes.Heading}>
-                    All Tasks
+                    All Rules
                 </div>
-                <div className={classes.Table}> <TableComponent head={head} keys={keys} data={data} totalCount={1} /></div>
+                <div className={classes.Table}> <TableComponent head={head} keys={keys} data={data} totalCount={data.length} /></div>
             </div>
         </div>
     )

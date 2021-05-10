@@ -12,7 +12,7 @@ const SlidingCardWith = ({ isOpen = true, setOpen, data, type }) => {
   const AnimatedCard = styled.div`
     animation: 0.7s ${slideIn};
   `;
-  
+
   return (
     isOpen && (
       <div>
@@ -27,14 +27,16 @@ const SlidingCardWith = ({ isOpen = true, setOpen, data, type }) => {
           <div className={classes.Heading}>
             Heading
           </div>
-          <div className={type?classes.InnerCardResult:classes.InnerCard}>
+          <div className={type ? classes.InnerCardResult : classes.InnerCard}>
             {type ? (<>
+              <div className={classes.operatorHead}>Attribute</div> <div className={classes.operatorHead}> Operator</div>
               <div className={classes.operatorHead}>Value</div> </>) : (<> <div className={classes.operatorHead}> Operator</div>
                 <div className={classes.operatorHead}>Value</div> </>)}
 
             {data && data.map((item, i) => type ? (
               <>
-
+                <div className={classes.operator}> {item.attribute_name} </div>
+                <div className={classes.operator}> {TYPE_ENUMS[item.operator]} </div>
                 <div className={classes.operator}> {item.value} </div>
               </>
             ) : (

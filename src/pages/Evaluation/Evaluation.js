@@ -6,6 +6,7 @@ import { Input, DropDownType } from "../../components/Input/Input";
 import { NameContext } from "../../context/FormProvider";
 import { RuleService } from "../../services/RuleService";
 import { Operator_OPTIONS } from "../../constants";
+import SlidingCardWith from "../../components/SlidingCardWithTabs/SlidingCardWithTabs"
 export default function Evaluation(props) {
     let [head, setHead] = useState([
         "S.No",
@@ -22,6 +23,8 @@ export default function Evaluation(props) {
         "value",
     ]);
     let [data, setData] = useState([]);
+    let [result,setResult]= useState([]);
+    let [open, setOpen] = useState(false);
     let [formdata, setFormData] = useState({});
     const { state: stateName } = useContext(NameContext);
     const startLoader = () => {
@@ -38,7 +41,7 @@ export default function Evaluation(props) {
     };
     const InputColumn = (item) => (
         <Input
-            name={`${item.type}v`}
+            name={`${item.attribute_name}v`}
             onChange={(e) => {
                 handleChange(e, item);
             }}
@@ -46,7 +49,7 @@ export default function Evaluation(props) {
     );
     const OperatorColumn = (item) => (
         <DropDownType
-            name={`${item.type}o`}
+            name={`${item.attribute_name}o`}
             options={Operator_OPTIONS[item.type]}
             onChange={(e) => {
                 handleChange(e, item);
@@ -81,11 +84,11 @@ export default function Evaluation(props) {
     const handleSubmit = () => {
         let namespace = stateName.name.namespace;
         let predicates = data.map((item) => {
-            delete item.id
+            // delete item.id
             return {
                 ...item,
-                operator: formdata[`${item.type}o`],
-                value: item.type === "string" ? formdata[`${item.type}v`] : Number(formdata[`${item.type}v`]),
+                operator: formdata[`${item.attribute_name}o`],
+                value: item.type === "string" ? formdata[`${item.attribute_name}v`] : Number(formdata[`${item.attribute_name}v`]),
             }
         })
         let payload = {
@@ -105,9 +108,12 @@ export default function Evaluation(props) {
     };
     const handleEvaluationSuccess = ({ data }) => {
         console.log(data);
+        setResult(data.outputs)
+        setOpen(true)
     };
     return (
         <div className={classes.Evaluation}>
+            <SlidingCardWith type={true}  isOpen={open} setOpen={setOpen} data={result} />
             <NavBar />
             <div className={classes.Container}>
                 <div className={classes.Heading}>Evaluation</div>

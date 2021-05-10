@@ -64,7 +64,8 @@ export default function ResultCard({
                                 label={"Type"}
                                 onChange={onChange}
                                 name={`resultType00`}
-                                options={TYPE_OPTIONS['eq']}
+                                options={TYPE_OPTIONS[formData[`resultOperator00`] === undefined ? "gt" : formData[`resultOperator00`]]}
+                              
                             />
                         </div>
                         <div>

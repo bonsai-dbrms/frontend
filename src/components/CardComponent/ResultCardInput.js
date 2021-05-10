@@ -20,7 +20,7 @@ export default function ResultCardInput({ onChange, data, formData }) {
           onChange={onChange}
           name={`resultType${data}`}
           data={data}
-          options={TYPE_OPTIONS['eq']}
+          options={TYPE_OPTIONS[formData[`resultOperator${data}`] === undefined ? "gt" : formData[`resultOperator${data}`]]}
         />
       </div>
       <div>

@@ -20,7 +20,7 @@ export default function ButtonSpace(props) {
                         EVALUATION
                 </div>
                     <div className={'btn-blue'} onClick={() => { props.history.push("/tasks") }}>
-                        ALL TASK
+                        ALL RULES
                 </div>
                 </div>
 
