@@ -16,7 +16,7 @@ const SlidingCardWith = ({ isOpen = true, setOpen, data, type }) => {
   return (
     isOpen && (
       <div>
-        <div className={classes.Backdrop} />
+        <div className={classes.Backdrop} onClick={() => setOpen(false)} />
         <AnimatedCard className={classes.Container}>
           <div style={{ position: 'relative' }}>
             <div className={classes.Buldge}>

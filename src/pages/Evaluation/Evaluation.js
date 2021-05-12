@@ -23,7 +23,7 @@ export default function Evaluation(props) {
         "value",
     ]);
     let [data, setData] = useState([]);
-    let [result,setResult]= useState([]);
+    let [result, setResult] = useState([]);
     let [open, setOpen] = useState(false);
     let [formdata, setFormData] = useState({});
     const { state: stateName } = useContext(NameContext);
@@ -83,8 +83,14 @@ export default function Evaluation(props) {
 
     const handleSubmit = () => {
         let namespace = stateName.name.namespace;
-        let predicates = data.map((item) => {
-            // delete item.id
+        let newdata = [];
+        data.forEach((v, i) => {
+            const val = (typeof v === 'object') ? Object.assign({}, v) : v;
+            newdata.push(val);
+        });
+        let predicates = newdata.map((item) => {
+            
+            delete item.id
             return {
                 ...item,
                 operator: formdata[`${item.attribute_name}o`],
@@ -113,7 +119,7 @@ export default function Evaluation(props) {
     };
     return (
         <div className={classes.Evaluation}>
-            <SlidingCardWith type={true}  isOpen={open} setOpen={setOpen} data={result} />
+            <SlidingCardWith type={true} isOpen={open} setOpen={setOpen} data={result} />
             <NavBar />
             <div className={classes.Container}>
                 <div className={classes.Heading}>Evaluation</div>

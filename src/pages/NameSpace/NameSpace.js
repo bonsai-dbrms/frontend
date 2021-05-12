@@ -17,7 +17,9 @@ export default function NameSpace(props) {
             type: "SET_FORM",
             payload: formData,
         });
-        props.history.push("/button")
+        if(formData.namespace){
+            props.history.push("/button")
+        }
     }
     return (
         <div className={classes.NameSpace}>
@@ -27,7 +29,7 @@ export default function NameSpace(props) {
                     Select Name Space
                 </div>
                 <div className={classes.dropDownSection}>
-                    <DropDownMax label={''} options={[{ "id": "tax_system", name: "Tax System" }, { "id": "loyalty_system", name: "Loyalty System" }]} name={"namespace"} onChange={handleChange} />
+                    <DropDownMax label={''} options={[{ "id": "", name: "None" },{ "id": "tax_system", name: "Tax System" }, { "id": "loyalty_system", name: "Loyalty System" }]} name={"namespace"} onChange={handleChange} />
                 </div>
 
                 <div className={classes.Button} onClick={handleClick}>
