@@ -136,7 +136,7 @@ export default function Evaluation(props) {
             <div className={classes.Container}>
                 <div className={classes.Heading}>Evaluation</div>
                 <div className={classes.Table}>
-                    <TableComponent head={head} keys={keys} data={data} />
+                    <TableComponent head={head} keys={keys} data={data} totalCount={data.length} />
                 </div>
                 <div
                     className={`btn-blue` + ` ${classes.Submit}`}

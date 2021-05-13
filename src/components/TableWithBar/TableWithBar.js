@@ -6,7 +6,7 @@ const TableWithBar = ({ head, keys, data, totalCount, addIndex = false, }) => {
   return (
     <div className={classes.TableWithBar}>
       <div className={classes.Bar}>
-      {totalCount &&<div className={classes.Totalcount}>Total Count : {totalCount}</div>} 
+      {<div className={classes.Totalcount}>Total Count : {totalCount? totalCount:0}</div>} 
         <div className={classes.RightContainer}>
         </div>
       </div>
