@@ -32,7 +32,7 @@ const SlidingCardWith = ({ isOpen = true, setOpen, data, type, history }) => {
           action: eye(item)
         }
       })
-      setoperatorData([{ attribute_name: data.output.attribute_name, operator: "=", value: data.output.value }])
+      data.output.attribute_name &&setoperatorData([{ attribute_name: data.output.attribute_name, operator:  "=", value: data.output.value }])
       setState(stateData)
     }
   }, [type, data])
