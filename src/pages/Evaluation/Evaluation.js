@@ -23,7 +23,7 @@ export default function Evaluation(props) {
         "value",
     ]);
     let [data, setData] = useState([]);
-    let [result, setResult] = useState([]);
+    let [result, setResult] = useState({});
     let [open, setOpen] = useState(false);
     let [formdata, setFormData] = useState({});
     const { state: stateName } = useContext(NameContext);
@@ -39,12 +39,19 @@ export default function Evaluation(props) {
             return { ...prev, [name]: value };
         });
     };
+    useEffect(() => {
+        // props.setLoading(true)
+        if(stateName.name.namespace===undefined){
+            props.history.push('/')
+        }
+    },[stateName])
     const InputColumn = (item) => (
         <Input
             name={`${item.attribute_name}v`}
             onChange={(e) => {
                 handleChange(e, item);
             }}
+            type={item.type==="int"?"number":"text"}
         />
     );
     const OperatorColumn = (item) => (
@@ -88,14 +95,19 @@ export default function Evaluation(props) {
             const val = (typeof v === 'object') ? Object.assign({}, v) : v;
             newdata.push(val);
         });
-        let predicates = newdata.map((item) => {
-            
-            delete item.id
-            return {
-                ...item,
-                operator: formdata[`${item.attribute_name}o`],
-                value: item.type === "string" ? formdata[`${item.attribute_name}v`] : Number(formdata[`${item.attribute_name}v`]),
+        let predicates = []
+        
+        newdata.map((item) => {
+            if(formdata[`${item.attribute_name}o`]&&formdata[`${item.attribute_name}o`].length >0){
+                delete item.id
+                let obj= {
+                    ...item,
+                    operator: formdata[`${item.attribute_name}o`],
+                    value: item.type === "string" ? formdata[`${item.attribute_name}v`] : Number(formdata[`${item.attribute_name}v`]),
+                }
+                predicates.push(obj) 
             }
+            
         })
         let payload = {
             namespace: namespace,
@@ -114,7 +126,7 @@ export default function Evaluation(props) {
     };
     const handleEvaluationSuccess = ({ data }) => {
         console.log(data);
-        setResult(data.outputs)
+        setResult(data)
         setOpen(true)
     };
     return (

@@ -46,6 +46,7 @@ export default function CardComponent({
               onChange={onChange}
               name={`variable${data}0`}
               data={data}
+              
             />
           </div>
         </div>
@@ -68,6 +69,7 @@ export default function CardComponent({
                 onChange={onChange}
                 name={`type${data}0`}
                 data={data}
+                
                 options={TYPE_OPTIONS[formData[`operator${data}0`] === undefined ? "gt" : formData[`operator${data}0`]]}
               />
             </div>
@@ -78,6 +80,7 @@ export default function CardComponent({
                 onChange={onChange}
                 name={`value${data}0`}
                 data={data}
+                type={formData[`type${data}0`]==="int"?"number":"text"}
               />
             </div>
 

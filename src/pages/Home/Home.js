@@ -19,7 +19,10 @@ const Home = (props) => {
     const stopLoader = () => { props.setLoading(false) }
     useEffect(() => {
         // props.setLoading(true)
-    })
+        if(stateName.name.namespace===undefined){
+            props.history.push('/')
+        }
+    },[stateName])
     // console.log(formData)
     const handleSubmit = (e) => {
         e.preventDefault()

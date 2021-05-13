@@ -74,7 +74,7 @@ export default function ResultCard({
                                 label={"value"}
                                 onChange={onChange}
                                 name={`resultValue00`}
-
+                                  type={formData["resultType00"]==="int"?"number":"text"}
                             />
                         </div>
 

@@ -5,6 +5,12 @@ import Navbar from "../../components/Navbar/Navbar";
 
 export default function ButtonSpace(props) {
     const { state } = useContext(NameContext)
+    useEffect(() => {
+        // props.setLoading(true)
+        if(state.name.namespace===undefined){
+            props.history.push('/')
+        }
+    },[state])
     return (
         <div className={classes.ButtonSpace}>
             <Navbar />

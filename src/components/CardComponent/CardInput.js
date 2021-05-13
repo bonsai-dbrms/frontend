@@ -30,6 +30,7 @@ export default function CardInput({ onChange, data ,formData}) {
           onChange={onChange}
           name={`value${data}`}
           data={data}
+          type={formData[`type${data}`]==="int"?"number":"text"}
         />
       </div>
     </>

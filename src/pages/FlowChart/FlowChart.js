@@ -2,20 +2,30 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 import classes from "./FlowChart.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import SlidingCardWith from "../../components/SlidingCardWithTabs/SlidingCardWithTabs";
-import { FormContext } from "../../context/FormProvider";
+import { FormContext,NameContext } from "../../context/FormProvider";
 import Xarrow from "react-xarrows";
-import { lineStyle, lineStyleWitharrow } from "./lineStyle"
-export default function FlowChart() {
-    const { state } = useContext(FormContext);
+import { lineStyle, lineStyleWitharrow } from "./lineStyle";
+import {RuleService}from "../../services/RuleService"
+export default function FlowChart(props) {
+    const { state,dispatch } = useContext(FormContext);
+    const { state: stateName } = useContext(NameContext);
     const [colours, setColours] = useState([]);
     const [type,setType]= useState(false);
     const [boxes, setBoxes] = useState([]);
     const [lines, setLines] = useState([]);
     const [Data, setData] = useState([]);
+    const startLoader = () => { props.setLoading(true) };
+    const stopLoader = () => { props.setLoading(false) };
     const boxStyle = (data, i) => {
         return { id: data, x: 100 + i * 150, y: 100 }
     }
     const [show, setShow] = useState(false);
+    useEffect(() => {
+        // props.setLoading(true)
+        if(stateName.name.namespace===undefined){
+            props.history.push('/')
+        }
+    },[stateName])
     useEffect(() => {
         let colorArray = [];
         state.form.predicates && state.form.predicates.map((item, i) => {
@@ -27,7 +37,29 @@ export default function FlowChart() {
         
         setColours(colorArray)
 
-    }, [state])
+    }, [state]);
+    useEffect(()=>{
+        let namespace = stateName.name.namespace;
+        let ruleId = (props.history.location.search).split('?')[1];
+        console.log(ruleId)
+       if(ruleId){
+        
+        RuleService.getRuleById(
+            ruleId,
+            namespace,
+            startLoader,
+            handleFetchRuleSuccess,
+            (err)=>console.log(err),
+            stopLoader
+          )
+       }
+    },[]);
+    const handleFetchRuleSuccess  =({data})=>{
+        dispatch({
+            type: "SET_FORM",
+            payload: data,
+        });
+    }
 
 
     useEffect(() => {

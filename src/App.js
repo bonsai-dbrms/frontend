@@ -8,7 +8,7 @@ import ButtonSpace from "./pages/ButtonSpace/ButtonSpace";
 import AllTasks from "./pages/AllTasks/AllTasks";
 import Evaluation from "./pages/Evaluation/Evaluation";
 import LoaderComponent from "./components/LoaderComponent/LoaderComponent";
-import React, { useState } from "react"
+import React, { useState,useEffect } from "react"
 function App() {
   const [loading, setLoading] = useState(false)
   return (
@@ -16,10 +16,10 @@ function App() {
       <LoaderComponent loading={loading} />
       <NameProvider>
         <FormProvider>
-
+         
           <Switch>
             <Route exact path="/create" render={(props) => (<Home history={props.history} setLoading={setLoading} />)} />
-            <Route exact path="/result" render={(props) => (<FlowChart history={props.history} setLoading={setLoading} />)} />
+            <Route exact path="/result" render={(props) => (<FlowChart history={props.history} match={props.match} setLoading={setLoading} />)} />
             <Route exact path="/" component={NameSpace} />
             <Route exact path="/button" render={(props) => (<ButtonSpace history={props.history} setLoading={setLoading} />)} />
             <Route exact path="/tasks" render={(props) => (<AllTasks history={props.history} setLoading={setLoading} />)} />

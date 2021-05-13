@@ -29,7 +29,7 @@
 }
 
 .TableComponent table {
-  width: 50vw;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 2vw;
 }

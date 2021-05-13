@@ -77,3 +77,22 @@
   text-align: center;
   font-size: .9vw;
 }
+
+
+.Table{
+  width: 14.77vw;
+  height: auto;
+  min-height: 10.52vw;
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  border-radius: 1.56vw;
+  opacity: 1;
+  color: black;
+  padding:  0vw 2vw;
+  margin-bottom: 2vw;
+}
+.Eye{
+  width: 1.5vw;
+  height: 1.5vw;
+  margin: auto;
+  cursor: pointer;
+}

@@ -30,6 +30,7 @@ export default function ResultCardInput({ onChange, data, formData }) {
           onChange={onChange}
           name={`resultValue${data}`}
           data={data}
+          type={formData[`resultType${data}`]==="int"?"number":"text"}
         />
       </div>
     </>

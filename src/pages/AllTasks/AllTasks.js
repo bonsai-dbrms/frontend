@@ -14,8 +14,11 @@ export default function AllTasks(props) {
     const startLoader = () => { props.setLoading(true) };
     const stopLoader = () => { props.setLoading(false) };
 
-
+   
     useEffect(() => {
+        if(stateName.name.namespace===undefined){
+            props.history.push('/')
+        }
         let namespace = stateName.name.namespace
         RuleService.getAllRules(namespace, startLoader, handleGetRuleSuccess, (err) => console.log(err), stopLoader)
     }, [stateName]);

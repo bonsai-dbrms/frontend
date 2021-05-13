@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from "./Input.module.css";
 
-export const Input = ({ label, name, data, onChange }) => {
+export const Input = ({ label, name, data, onChange,type="text" }) => {
     return (
         <div className={classes.Input}>
             <label htmlFor="text">{label}</label>
-            <input type="text" id="text" name={`${name}`} onChange={onChange} />
+            <input type={type} id="text" name={`${name}`} onChange={onChange} />
         </div>
     )
 }
