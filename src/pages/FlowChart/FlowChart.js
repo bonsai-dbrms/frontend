@@ -2,15 +2,15 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 import classes from "./FlowChart.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import SlidingCardWith from "../../components/SlidingCardWithTabs/SlidingCardWithTabs";
-import { FormContext,NameContext } from "../../context/FormProvider";
+import { FormContext, NameContext } from "../../context/FormProvider";
 import Xarrow from "react-xarrows";
 import { lineStyle, lineStyleWitharrow } from "./lineStyle";
-import {RuleService}from "../../services/RuleService"
+import { RuleService } from "../../services/RuleService"
 export default function FlowChart(props) {
-    const { state,dispatch } = useContext(FormContext);
+    const { state, dispatch } = useContext(FormContext);
     const { state: stateName } = useContext(NameContext);
     const [colours, setColours] = useState([]);
-    const [type,setType]= useState(false);
+    const [type, setType] = useState(false);
     const [boxes, setBoxes] = useState([]);
     const [lines, setLines] = useState([]);
     const [Data, setData] = useState([]);
@@ -20,13 +20,14 @@ export default function FlowChart(props) {
         return { id: data, x: 100 + i * 150, y: 100 }
     }
     const [show, setShow] = useState(false);
-    const handleClose =()=>{setShow(false)}
+    const handleClose = () => { setShow(false) }
     useEffect(() => {
         // props.setLoading(true)
-        if(stateName.name.namespace===undefined){
+        if (stateName.name.namespace === undefined) {
             props.history.push('/')
         }
-    },[stateName])
+    }, [stateName]);
+    
     useEffect(() => {
         let colorArray = [];
         state.form.predicates && state.form.predicates.map((item, i) => {
@@ -35,27 +36,33 @@ export default function FlowChart(props) {
                 colorArray.push(item.attribute_name)
             }
         })
-        
+
         setColours(colorArray)
 
     }, [state]);
-    useEffect(()=>{
+    useEffect(() => {
         let namespace = stateName.name.namespace;
         let ruleId = (props.history.location.search).split('?')[1];
-        console.log(ruleId)
-       if(ruleId){
-        
-        RuleService.getRuleById(
-            ruleId,
-            namespace,
-            startLoader,
-            handleFetchRuleSuccess,
-            (err)=>console.log(err),
-            stopLoader
-          )
-       }
-    },[]);
-    const handleFetchRuleSuccess  =({data})=>{
+       
+        if (ruleId) {
+
+            RuleService.getRuleById(
+                ruleId,
+                namespace,
+                startLoader,
+                handleFetchRuleSuccess,
+                (err) => console.log(err),
+                stopLoader
+            )
+        }
+    }, []);
+    const handleFetchRuleSuccess = ({ data }) => {
+        setBoxes([])
+        setLines([])
+        dispatch({
+            type: "REMOVE_FORM",
+
+        });
         dispatch({
             type: "SET_FORM",
             payload: data,
@@ -82,7 +89,7 @@ export default function FlowChart(props) {
         setType(false)
         let array = state.form.predicates && state.form.predicates.filter((item, i) => item.attribute_name === id)
         setShow(true)
-       
+
         setData(array)
 
     }
@@ -90,14 +97,14 @@ export default function FlowChart(props) {
         // setType(true)
         let array = state.form.result && state.form.result
         setShow(true)
-        
+
         array && setData(array)
     }
-    // console.log(boxes, lines)
+ 
     return (
         <div className={classes.FlowChart}>
             <Navbar />
-            <SlidingCardWith isOpen={show} handleClose={handleClose} data={Data}  type={type} />
+            <SlidingCardWith isOpen={show} handleClose={handleClose} data={Data} type={type} />
             <div className={classes.Container}>
                 <div className={classes.Left}>
                     <div className={classes.Heading}>
@@ -109,13 +116,13 @@ export default function FlowChart(props) {
                         ))}
                     </div>
                     {
-                        boxes.length > 0 && (<div  className={classes.resultBoxContainer}>
+                        boxes.length > 0 && (<div className={classes.resultBoxContainer}>
                             {/* <div id={'result'} className={classes.tank}>
                                 <div className={classes.bottom}></div>
                                 <div className={classes.middle}></div>
                                 <div className={classes.top}></div>
                             </div> */}
-                             <div id={'result'} className={classes.resultBox} onClick={resultHandle}><div>{String(state.form.result && state.form.result[0].attribute_name).toUpperCase()}</div></div>
+                            <div id={'result'} className={classes.resultBox} onClick={resultHandle}><div>{String(state.form.result && state.form.result[0].attribute_name).toUpperCase()}</div></div>
                         </div>)
                     }
                     {lines.map((line, i) => (
@@ -125,7 +132,7 @@ export default function FlowChart(props) {
                 <div className={classes.test}>
                     <div className={classes.Reference}>
                         <div className={classes.Heading}>
-                        Legends
+                            Legends
                         </div>
                         <div className={classes.If}>
                             <div>IF</div>
@@ -140,5 +147,3 @@ export default function FlowChart(props) {
     )
 }
 
-
-// nodeTemplate={()=>(<input type="text" onclick={()=>{console.log('hi')}} />)}

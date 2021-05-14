@@ -1,5 +1,5 @@
 import classes from "./SlidingCardWithTabs.module.css";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import Buldge from "../../assets/Buldgeleft.png";
 import CloseIcon from "../../assets/Close.svg";
 import TableComponent from "../TableWithBar/TableWithBar";
@@ -12,20 +12,21 @@ const slideIn = keyframes`${slideInRight}`;
 const AnimatedCard = styled.div`
   animation: 0.7s ${slideIn};
 `;
-const SlidingCardWith = ({ isOpen = true,  data, type, history,handleClose }) => {
+const SlidingCardWith = ({ isOpen = true, data, type, history, handleClose }) => {
   const [state, setState] = useState([]);
   const [operatorData, setoperatorData] = useState([]);
   useEffect(() => {
-    if (type && data && data?.eval_order &&  data?.output?.attribute_name  ) {
+    if (type && data && data?.eval_order && data?.output?.attribute_name) {
       let stateData = [];
-      data.eval_order.map((item) => {
+      data.eval_order.map((item,i) => {
         stateData.push({
+          id:i+1,
           ruleId: item,
           action: eyeComponent(item, history),
         });
       });
-      console.log(stateData)
-        
+   
+
       data?.output?.attribute_name &&
         setoperatorData([
           {
@@ -35,6 +36,15 @@ const SlidingCardWith = ({ isOpen = true,  data, type, history,handleClose }) =>
           },
         ]);
       setState(stateData);
+    }
+    if (!type) {
+      let objectData = data && data.map((item) => {
+        return {
+          ...item,
+          operator: TYPE_ENUMS[item.operator]
+        }
+      })
+      setoperatorData(objectData)
     }
   }, [type, data]);
 
@@ -58,8 +68,8 @@ const SlidingCardWith = ({ isOpen = true,  data, type, history,handleClose }) =>
           {type && data && (
             <div className={classes.Table}>
               <TableComponent
-                head={["RuleId", "Action"]}
-                keys={["ruleId", "action"]}
+                head={["S.no","RuleId", "Action"]}
+                keys={["id","ruleId", "action"]}
                 data={state}
               />
             </div>
@@ -76,21 +86,14 @@ const SlidingCardWith = ({ isOpen = true,  data, type, history,handleClose }) =>
             </div>
           )}
           {!type && (
-            <div className={classes.InnerCard}>
-              <div className={classes.operatorHead}> Operator</div>
-              <div className={classes.operatorHead}>Value</div>
-
-              {data &&
-                data.map((item) => (
-                  <>
-                    <div className={classes.operator}>
-                      {" "}
-                      {TYPE_ENUMS[item.operator]}{" "}
-                    </div>
-                    <div className={classes.operator}> {item.value} </div>
-                  </>
-                ))}
+            <div className={classes.Table} style={{marginTop:"3vw"}}>
+              <TableComponent
+                head={["Attribute", "Operator", "Value"]}
+                keys={["attribute_name", "operator", "value"]}
+                data={operatorData}
+              />
             </div>
+          
           )}
         </AnimatedCard>
       </div>

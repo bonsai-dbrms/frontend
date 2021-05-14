@@ -21,6 +21,7 @@ select:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .ButtonContainer {
   justify-content: center;
@@ -50,4 +51,5 @@ select:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }

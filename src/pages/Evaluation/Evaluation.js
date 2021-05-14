@@ -128,7 +128,7 @@ export default function Evaluation(props) {
         );
     };
     const handleEvaluationSuccess = ({ data }) => {
-        console.log(data);
+        
         setResult(data)
         setOpen(true)
     };

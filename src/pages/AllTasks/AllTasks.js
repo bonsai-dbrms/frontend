@@ -24,7 +24,7 @@ export default function AllTasks(props) {
     }, [stateName]);
     const handleGetRuleSuccess = ({ data }) => {
         // let resData =[...data];
-        console.log(data)
+       
         let resData = data.map((item) => ({
             ...item,
             action: eye(item)

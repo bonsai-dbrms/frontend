@@ -37,7 +37,7 @@ const Home = (props) => {
         // console.log(responseData)
     }
 const handleCreateRuleSuccess=({data})=>{
-    console.log(data)
+  
     props.history.push('/result')
 }
     const handleAddContainer = () => {

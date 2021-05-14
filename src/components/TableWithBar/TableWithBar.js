@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { get as LodashGet } from 'lodash';
 
 const TableWithBar = ({ head, keys, data, totalCount, addIndex = false, }) => {
-  console.log(totalCount)
+  
   return (
     <div className={classes.TableWithBar}>
       <div className={classes.Bar}>
