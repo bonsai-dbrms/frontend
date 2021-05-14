@@ -27,6 +27,9 @@ export default function Evaluation(props) {
     let [open, setOpen] = useState(false);
     let [formdata, setFormData] = useState({});
     const { state: stateName } = useContext(NameContext);
+    const handleClose =()=>{
+        setOpen(false)
+    }
     const startLoader = () => {
         props.setLoading(true);
     };
@@ -41,29 +44,29 @@ export default function Evaluation(props) {
     };
     useEffect(() => {
         // props.setLoading(true)
-        if(stateName.name.namespace===undefined){
+        if (stateName.name.namespace === undefined) {
             props.history.push('/')
         }
-    },[stateName])
+    }, [stateName])
     const InputColumn = (item) => (
         <Input
             name={`${item.attribute_name}v`}
             onChange={(e) => {
                 handleChange(e, item);
             }}
-            type={item.type==="int"?"number":"text"}
+            type={item.type === "int" ? "number" : "text"}
         />
     );
     const OperatorColumn = (item) => (
-        <DropDownType
-            name={`${item.attribute_name}o`}
-            options={Operator_OPTIONS[item.type]}
-            onChange={(e) => {
-                handleChange(e, item);
-            }}
-        />
+        <>=</>
     );
-
+    //     <DropDownType
+    //     name={`${item.attribute_name}o`}
+    //     options={Operator_OPTIONS[item.type]}
+    //     onChange={(e) => {
+    //         handleChange(e, item);
+    //     }}
+    // />
 
 
     useEffect(() => {
@@ -96,18 +99,18 @@ export default function Evaluation(props) {
             newdata.push(val);
         });
         let predicates = []
-        
+
         newdata.map((item) => {
-            if(formdata[`${item.attribute_name}o`]&&formdata[`${item.attribute_name}o`].length >0){
+            if (formdata[`${item.attribute_name}v`] && formdata[`${item.attribute_name}v`].length > 0) {
                 delete item.id
-                let obj= {
+                let obj = {
                     ...item,
-                    operator: formdata[`${item.attribute_name}o`],
+                    operator: "eq",
                     value: item.type === "string" ? formdata[`${item.attribute_name}v`] : Number(formdata[`${item.attribute_name}v`]),
                 }
-                predicates.push(obj) 
+                predicates.push(obj)
             }
-            
+
         })
         let payload = {
             namespace: namespace,
@@ -131,7 +134,7 @@ export default function Evaluation(props) {
     };
     return (
         <div className={classes.Evaluation}>
-            <SlidingCardWith type={true} isOpen={open} setOpen={setOpen} data={result} />
+            <SlidingCardWith type={true} isOpen={open} handleClose={handleClose} data={result} />
             <NavBar />
             <div className={classes.Container}>
                 <div className={classes.Heading}>Evaluation</div>

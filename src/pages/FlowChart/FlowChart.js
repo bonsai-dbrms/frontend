@@ -20,6 +20,7 @@ export default function FlowChart(props) {
         return { id: data, x: 100 + i * 150, y: 100 }
     }
     const [show, setShow] = useState(false);
+    const handleClose =()=>{setShow(false)}
     useEffect(() => {
         // props.setLoading(true)
         if(stateName.name.namespace===undefined){
@@ -96,7 +97,7 @@ export default function FlowChart(props) {
     return (
         <div className={classes.FlowChart}>
             <Navbar />
-            <SlidingCardWith isOpen={show} setOpen={setShow} data={Data}  type={type} />
+            <SlidingCardWith isOpen={show} handleClose={handleClose} data={Data}  type={type} />
             <div className={classes.Container}>
                 <div className={classes.Left}>
                     <div className={classes.Heading}>
@@ -124,7 +125,7 @@ export default function FlowChart(props) {
                 <div className={classes.test}>
                     <div className={classes.Reference}>
                         <div className={classes.Heading}>
-                            HEADING
+                        Legends
                         </div>
                         <div className={classes.If}>
                             <div>IF</div>

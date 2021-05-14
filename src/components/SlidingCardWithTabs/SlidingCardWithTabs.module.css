@@ -15,7 +15,7 @@
   border-radius: 1.56vw;
   position: fixed;
   width: 18.76vw;
-  height: 42.125vw;
+  height: 90vh;
   z-index: 2;
   top: 0.5vw;
   right: 2vw;
@@ -40,7 +40,10 @@
 }
 .Heading {
   text-align: center;
-  margin-bottom: 5vw;
+  margin-bottom: 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .InnerCard {
   width: 14.77vw;
@@ -54,6 +57,7 @@
   gap: 0vw;
   color: black;
   padding:  2vw;
+  margin-top: 4vw;
 }
 .InnerCardResult {
   width: 14.77vw;

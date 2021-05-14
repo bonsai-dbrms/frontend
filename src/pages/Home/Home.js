@@ -106,13 +106,13 @@ const handleCreateRuleSuccess=({data})=>{
                 <div className={classes.test}>
                     <div className={classes.Reference}>
                         <div className={classes.Heading}>
-                            References
+                        Rule Definition includes :
                     </div>
                         <div className={classes.SubHeading}>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        <span>Predicates :</span> a list of conditions  matched against the input.
                     </div>
                         <div className={classes.SubHeading}>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        <span>Result set :</span> list of result attributes to be returned on successful rule match
                     </div>
                     </div>
                 </div>

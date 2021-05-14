@@ -142,7 +142,7 @@
 .Heading {
   letter-spacing: 0px;
   color: #313131;
-  text-transform: capitalize;
+  text-transform: uppercase;
   opacity: 1;
   display: flex;
   font-size: 1.04vw;

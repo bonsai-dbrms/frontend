@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import { get as LodashGet } from 'lodash';
 
 const TableWithBar = ({ head, keys, data, totalCount, addIndex = false, }) => {
+  console.log(totalCount)
   return (
     <div className={classes.TableWithBar}>
       <div className={classes.Bar}>
-      {<div className={classes.Totalcount}>Total Count : {totalCount? totalCount:0}</div>} 
+        {totalCount>=0 && <div className={classes.Totalcount}>Total Count : {totalCount>=0 ? totalCount : null}</div>}
         <div className={classes.RightContainer}>
         </div>
       </div>
